@@ -73,7 +73,6 @@ const renderActiveNote = () => {
 };
 
 const handleNoteSave = () => {
-  console.log('handleNoteSave');
   const newNote = {
     title: noteTitle.value,
     text: noteText.value,
@@ -179,10 +178,7 @@ const renderNoteList = async (notes) => {
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
-console.log('window.location.pathname', window.location.pathname);
-
 if (window.location.pathname === '/notes') {
-  console.log('window.location.pathname === /notes');
   saveNoteBtn.addEventListener('click', handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
   clearBtn.addEventListener('click', renderActiveNote);
